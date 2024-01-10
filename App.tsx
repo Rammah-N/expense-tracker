@@ -5,6 +5,7 @@ import * as SplashScreen from "expo-splash-screen";
 import { useFonts } from "expo-font";
 import { useCallback } from "react";
 import PopShadow from "./components/ui/PopShadow";
+import { Link } from "expo-router";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -31,6 +32,9 @@ export default function App() {
 						borderWidth: 1,
 					}}>
 					<Text>Hello World!!</Text>
+				</View>
+				<View>
+					<Link href="/settings">Settings</Link>
 				</View>
 			</PopShadow>
 			<StatusBar style="light" />
