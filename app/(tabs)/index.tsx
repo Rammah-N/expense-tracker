@@ -1,14 +1,54 @@
 import { Link } from "expo-router";
 import React from "react";
-import { Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
+import Avatar from "../../components/ui/Avatar";
+import person from "../../assets/person.png";
+import * as SplashScreen from "expo-splash-screen";
+import { useFonts } from "expo-font";
+import { useCallback } from "react";
+import { Colors, Typography } from "../../constants";
+import Title from "../../components/ui/Title";
+import Container from "../../components/ui/Container";
+
+SplashScreen.preventAutoHideAsync();
 
 const Homepage = () => {
+	const [loadedFonts] = useFonts({ ...Typography.sources });
+
+	const onLayoutRootView = useCallback(async () => {
+		if (loadedFonts) {
+			await SplashScreen.hideAsync();
+		}
+	}, [loadedFonts]);
+
+	if (!loadedFonts) {
+		return null;
+	}
 	return (
-		<View>
-			<Text>Hello</Text>
-			<Link href="/settings">Settings</Link>
-		</View>
+		<Container>
+			<ScrollView onLayout={onLayoutRootView}>
+				{/* <View style={styles.profile}>
+				<Avatar source={person} />
+				<Text style={styles.profileText}>Hello, Rammah</Text>
+			</View> */}
+				<Title title="Accounts Summary" style={{ marginVertical: 20 }} />
+				<Link href="/settings">Settings</Link>
+			</ScrollView>
+		</Container>
 	);
 };
 
 export default Homepage;
+
+const styles = StyleSheet.create({
+	profile: {
+		flexDirection: "row",
+		alignItems: "center",
+		gap: 5,
+		justifyContent: "flex-start",
+	},
+	profileText: {
+		fontFamily: Typography.fonts.InterMedium,
+		fontSize: Typography.sizes.rg,
+	},
+});

@@ -1,21 +1,33 @@
 import React from "react";
 import { Shadow } from "react-native-shadow-2";
 import { Colors } from "../../constants";
+import { StyleProp, StyleSheet, View, ViewStyle } from "react-native";
 
 export default function PopShadow({
 	children,
+	style,
 	...rest
 }: {
 	children: React.ReactNode;
+	style?: StyleProp<ViewStyle>;
 }) {
 	return (
-		<Shadow
-			distance={0}
-			offset={[-5, 5]}
-			startColor="#000000"
-			style={{ backgroundColor: Colors.offwhite }}
-			{...rest}>
-			{children}
-		</Shadow>
+		<View style={[{ paddingLeft: 5 }, style]} {...rest}>
+			<Shadow
+				distance={0}
+				offset={[-5, 5]}
+				startColor="#000000"
+				style={{
+					backgroundColor: Colors.offwhite,
+					borderTopWidth: 1,
+					borderLeftWidth: 1,
+					borderRightWidth: 1,
+					borderBottomWidth: 1,
+					paddingHorizontal: 5,
+					paddingVertical: 5,
+				}}>
+				{children}
+			</Shadow>
+		</View>
 	);
 }

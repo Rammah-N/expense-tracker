@@ -20,6 +20,7 @@ export default {
 		xs: 12,
 		sm: 14,
 		rg: 16,
+		md: 20,
 		lg: 24,
 		xl: 32,
 		xxl: 42,

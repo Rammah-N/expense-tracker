@@ -1,3 +1,15 @@
+// Colored Icons
+export { default as homeWhite } from "./colored/home-white.png";
+export { default as chartWhite } from "./colored/chart-white.png";
+export { default as settingsWhite } from "./colored/settings-white.png";
+export { default as discountWhite } from "./colored/discount-white.png";
+
+export { default as homeWhiteFilled } from "./colored/home-white-filled.png";
+export { default as chartWhiteFilled } from "./colored/chart-white-filled.png";
+export { default as settingsWhiteFilled } from "./colored/settings-white-filled.png";
+export { default as discountWhiteFilled } from "./colored/discount-white-filled.png";
+
+// Stock Icons
 export { default as analytics } from "./analytics.png";
 export { default as anchor } from "./anchor.png";
 export { default as apple } from "./apple.png";

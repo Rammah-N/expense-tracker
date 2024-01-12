@@ -6,6 +6,7 @@ import * as SplashScreen from "expo-splash-screen";
 import { useFonts } from "expo-font";
 import { useCallback } from "react";
 import { Link } from "expo-router";
+import Container from "../components/ui/Container";
 
 SplashScreen.preventAutoHideAsync();
 export default function Layout() {
@@ -28,7 +29,15 @@ export default function Layout() {
 					backgroundColor: Colors.offwhite,
 				},
 			}}>
-			<Stack.Screen name="(tabs)" />
+			<Stack.Screen
+				name="(tabs)"
+				options={{
+					headerTitleStyle: {
+						fontFamily: "Inter-Bold",
+						fontSize: 40,
+					},
+				}}
+			/>
 		</Stack>
 	);
 }
