@@ -1,11 +1,4 @@
-import {
-	Image,
-	ImageBackground,
-	ImageSourcePropType,
-	StyleSheet,
-	Text,
-	View,
-} from "react-native";
+import { ImageBackground, ImageSourcePropType, StyleSheet } from "react-native";
 import React from "react";
 
 const Avatar = ({ source }: { source: ImageSourcePropType }) => {
