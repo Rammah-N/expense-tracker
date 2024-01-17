@@ -9,6 +9,7 @@ import { useCallback } from "react";
 import { Colors, Typography } from "../../constants";
 import Title from "../../components/ui/Title";
 import Container from "../../components/ui/Container";
+import TotalBalance from "../../components/TotalBalance";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -31,7 +32,8 @@ const Homepage = () => {
 				<Avatar source={person} />
 				<Text style={styles.profileText}>Hello, Rammah</Text>
 			</View> */}
-				<Title title="Accounts Summary" style={{ marginVertical: 20 }} />
+				<TotalBalance />
+				<Title title="Accounts" style={{ marginVertical: 20 }} />
 				<Link href="/settings">Settings</Link>
 			</ScrollView>
 		</Container>
@@ -48,7 +50,7 @@ const styles = StyleSheet.create({
 		justifyContent: "flex-start",
 	},
 	profileText: {
-		fontFamily: Typography.fonts.InterMedium,
+		fontFamily: Typography.fonts.medium,
 		fontSize: Typography.sizes.rg,
 	},
 });

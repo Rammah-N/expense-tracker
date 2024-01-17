@@ -30,7 +30,7 @@ const RootLayout = () => {
 			borderBottomWidth: 1,
 		},
 		headerTitleStyle: {
-			fontFamily: Typography.fonts.InterBold,
+			fontFamily: Typography.fonts.bold,
 			textAlign: "left",
 		},
 		tabBarStyle: styles.tabBar,
@@ -78,7 +78,7 @@ const RootLayout = () => {
 					title: "Budgets",
 					...tabOptions,
 					headerTitleStyle: {
-						fontFamily: Typography.fonts.InterBold,
+						fontFamily: Typography.fonts.bold,
 						textAlign: "left",
 					},
 					tabBarIcon(props) {
