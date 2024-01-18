@@ -1,7 +1,7 @@
 import { Stack } from "expo-router";
 import { Colors, Typography } from "../constants";
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import * as SplashScreen from "expo-splash-screen";
 import { useFonts } from "expo-font";
 import { useCallback } from "react";
@@ -22,22 +22,17 @@ export default function Layout() {
 		return null;
 	}
 	return (
-		<Stack
-			screenOptions={{
-				headerShown: false,
-				contentStyle: {
-					backgroundColor: Colors.offwhite,
-				},
-			}}>
-			<Stack.Screen
-				name="(tabs)"
-				options={{
-					headerTitleStyle: {
-						fontFamily: "Inter-Bold",
-						fontSize: 40,
+		<SafeAreaView onLayout={onLayoutRootView} style={{ flex: 1 }}>
+			<Stack
+				screenOptions={{
+					// headerShown: false,
+					contentStyle: {
+						backgroundColor: Colors.offwhite,
 					},
-				}}
-			/>
-		</Stack>
+				}}>
+				<Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+				<Stack.Screen name="budgets/[id]" />
+			</Stack>
+		</SafeAreaView>
 	);
 }

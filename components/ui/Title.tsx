@@ -8,12 +8,13 @@ import PopShadow from "./PopShadow";
 const Title = ({
 	title,
 	style,
+	...rest
 }: {
 	title: string;
 	style?: StyleProp<ViewStyle>;
 }) => {
 	return (
-		<PopShadow style={style}>
+		<PopShadow style={style} {...rest}>
 			<TextStroke stroke={1} color="black">
 				<Text style={styles.text}>{title}</Text>
 			</TextStroke>

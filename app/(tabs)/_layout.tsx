@@ -121,7 +121,7 @@ export default RootLayout;
 const styles = StyleSheet.create({
 	icon: { width: 20, height: 20, resizeMode: "contain" },
 	label: {
-		fontFamily: "Inter-Regular",
+		fontFamily: Typography.fonts.regular,
 		color: Colors.offwhite,
 		fontSize: Typography.sizes.xxs,
 	},

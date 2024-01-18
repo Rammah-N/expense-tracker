@@ -1,12 +1,18 @@
-import { ImageBackground, StyleSheet, Text, View } from "react-native";
+import {
+	ImageBackground,
+	StyleSheet,
+	Text,
+	View,
+	ViewProps,
+} from "react-native";
 import React from "react";
 import { Colors, Typography } from "../constants";
 import { dollar1 } from "../assets/icons";
 import { TextStroke } from "./ui/TextStroke";
 
-const TotalBalance = () => {
+const TotalBalance: React.FC<ViewProps> = (props) => {
 	return (
-		<View style={styles.container}>
+		<View style={styles.container} {...props}>
 			<TextStroke stroke={1} color="black">
 				<Text style={styles.text}>Total Balance</Text>
 			</TextStroke>

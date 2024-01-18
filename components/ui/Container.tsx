@@ -1,10 +1,12 @@
-import { StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, StyleSheet, View, ViewProps } from "react-native";
 import React from "react";
 import { Colors } from "../../constants";
 
-const Container = ({ children }: { children: React.ReactNode }) => {
-	return <View style={styles.container}>{children}</View>;
-};
+const Container: React.FC<ViewProps> = ({ children, ...rest }) => (
+	<SafeAreaView style={styles.container} {...rest}>
+		{children}
+	</SafeAreaView>
+);
 
 export default Container;
 
@@ -13,5 +15,6 @@ const styles = StyleSheet.create({
 		backgroundColor: Colors.offwhite,
 		height: "100%",
 		padding: 10,
+		flex: 1,
 	},
 });

@@ -1,16 +1,22 @@
 import React from "react";
 import { Shadow } from "react-native-shadow-2";
 import { Colors } from "../../constants";
-import { StyleProp, StyleSheet, View, ViewStyle } from "react-native";
+import {
+	StyleProp,
+	StyleSheet,
+	View,
+	ViewProps,
+	ViewStyle,
+} from "react-native";
 
-export default function PopShadow({
+const PopShadow: React.FC<ViewProps> = ({
 	children,
 	style,
 	...rest
 }: {
 	children: React.ReactNode;
 	style?: StyleProp<ViewStyle>;
-}) {
+}) => {
 	return (
 		<View style={[{ paddingLeft: 5 }, style]} {...rest}>
 			<Shadow
@@ -30,4 +36,6 @@ export default function PopShadow({
 			</Shadow>
 		</View>
 	);
-}
+};
+
+export default PopShadow;

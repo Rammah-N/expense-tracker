@@ -6,28 +6,15 @@ import person from "../../assets/person.png";
 import * as SplashScreen from "expo-splash-screen";
 import { useFonts } from "expo-font";
 import { useCallback } from "react";
-import { Colors, Typography } from "../../constants";
-import Title from "../../components/ui/Title";
-import Container from "../../components/ui/Container";
-import TotalBalance from "../../components/TotalBalance";
-
-SplashScreen.preventAutoHideAsync();
+import { Colors, Typography } from "@/constants";
+import Title from "@/components/ui/Title";
+import Container from "@/components/ui/Container";
+import TotalBalance from "@/components/TotalBalance";
 
 const Homepage = () => {
-	const [loadedFonts] = useFonts({ ...Typography.sources });
-
-	const onLayoutRootView = useCallback(async () => {
-		if (loadedFonts) {
-			await SplashScreen.hideAsync();
-		}
-	}, [loadedFonts]);
-
-	if (!loadedFonts) {
-		return null;
-	}
 	return (
 		<Container>
-			<ScrollView onLayout={onLayoutRootView}>
+			<ScrollView>
 				{/* <View style={styles.profile}>
 				<Avatar source={person} />
 				<Text style={styles.profileText}>Hello, Rammah</Text>
