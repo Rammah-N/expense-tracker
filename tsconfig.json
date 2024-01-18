@@ -3,7 +3,10 @@
 	"compilerOptions": {
 		"baseUrl": ".",
 		"paths": {
-			"@/*": ["./*"]
+			"@/*": ["./*"],
+			// Create aliases for ui folder
+			"@ui/*": ["./components/ui/*"],
+			"icons/*": ["./assets/icons/*"]
 		}
 	},
 	"include": ["**/*.ts", "**/*.tsx"],

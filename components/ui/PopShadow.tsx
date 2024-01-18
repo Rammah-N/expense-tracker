@@ -1,5 +1,5 @@
 import React from "react";
-import { Shadow } from "react-native-shadow-2";
+import { Shadow, ShadowProps } from "react-native-shadow-2";
 import { Colors } from "../../constants";
 import {
 	StyleProp,
@@ -9,29 +9,31 @@ import {
 	ViewStyle,
 } from "react-native";
 
-const PopShadow: React.FC<ViewProps> = ({
+interface Props extends ViewProps {
+	shadowProps?: ShadowProps;
+}
+
+const PopShadow: React.FC<Props> = ({
 	children,
 	style,
+	shadowProps,
 	...rest
-}: {
-	children: React.ReactNode;
-	style?: StyleProp<ViewStyle>;
 }) => {
 	return (
-		<View style={[{ paddingLeft: 5 }, style]} {...rest}>
+		<View style={style} {...rest}>
 			<Shadow
 				distance={0}
 				offset={[-5, 5]}
 				startColor="#000000"
 				style={{
 					backgroundColor: Colors.offwhite,
-					borderTopWidth: 1,
-					borderLeftWidth: 1,
-					borderRightWidth: 1,
-					borderBottomWidth: 1,
-					paddingHorizontal: 5,
-					paddingVertical: 5,
-				}}>
+					borderTopWidth: 2,
+					borderLeftWidth: 2,
+					borderRightWidth: 2,
+					borderBottomWidth: 2,
+					borderRadius: 5,
+				}}
+				{...shadowProps}>
 				{children}
 			</Shadow>
 		</View>

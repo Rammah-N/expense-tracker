@@ -1,5 +1,5 @@
 import * as React from "react";
-import { StyleProp, StyleSheet, Text, ViewStyle } from "react-native";
+import { StyleProp, StyleSheet, Text, View, ViewStyle } from "react-native";
 import { Colors, Typography } from "../../constants";
 
 import { TextStroke } from "./TextStroke";
@@ -14,7 +14,7 @@ const Title = ({
 	style?: StyleProp<ViewStyle>;
 }) => {
 	return (
-		<PopShadow style={style} {...rest}>
+		<PopShadow style={[style, { marginLeft: 10 }]} {...rest}>
 			<TextStroke stroke={1} color="black">
 				<Text style={styles.text}>{title}</Text>
 			</TextStroke>
@@ -29,5 +29,6 @@ const styles = StyleSheet.create({
 		fontSize: Typography.sizes.md,
 		fontFamily: Typography.fonts.regular,
 		color: Colors.offwhite,
+		padding: 5,
 	},
 });

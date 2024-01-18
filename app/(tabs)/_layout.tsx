@@ -45,6 +45,7 @@ const RootLayout = () => {
 				options={{
 					title: "Home",
 					...tabOptions,
+					headerShown: false,
 					tabBarIcon(props) {
 						if (props.focused)
 							return (

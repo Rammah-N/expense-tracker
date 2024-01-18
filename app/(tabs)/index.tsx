@@ -1,27 +1,27 @@
-import { Link } from "expo-router";
 import React from "react";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import Avatar from "../../components/ui/Avatar";
 import person from "../../assets/person.png";
-import * as SplashScreen from "expo-splash-screen";
-import { useFonts } from "expo-font";
-import { useCallback } from "react";
-import { Colors, Typography } from "@/constants";
-import Title from "@/components/ui/Title";
+import { Colors, Spacing, Typography } from "@/constants";
 import Container from "@/components/ui/Container";
 import TotalBalance from "@/components/TotalBalance";
+import Accounts from "@/components/accounts/Accounts";
 
 const Homepage = () => {
 	return (
-		<Container>
+		<Container style={{ paddingTop: 50 }}>
 			<ScrollView>
-				{/* <View style={styles.profile}>
-				<Avatar source={person} />
-				<Text style={styles.profileText}>Hello, Rammah</Text>
-			</View> */}
+				<View style={styles.profile}>
+					<Avatar source={person} />
+					<Text style={styles.profileText} numberOfLines={1}>
+						Hello, Rammah
+					</Text>
+				</View>
+
 				<TotalBalance />
-				<Title title="Accounts" style={{ marginVertical: 20 }} />
-				<Link href="/settings">Settings</Link>
+				{/* Accounts */}
+				<Accounts style={{ marginVertical: Spacing[3] }} />
+				{/* Transactions */}
 			</ScrollView>
 		</Container>
 	);
@@ -33,11 +33,15 @@ const styles = StyleSheet.create({
 	profile: {
 		flexDirection: "row",
 		alignItems: "center",
-		gap: 5,
+		gap: 10,
 		justifyContent: "flex-start",
+		paddingBottom: Spacing[1],
+		marginBottom: 20,
+		borderBottomWidth: 1,
+		borderBottomColor: Colors.darkest,
 	},
 	profileText: {
-		fontFamily: Typography.fonts.medium,
+		fontFamily: Typography.fonts.bold,
 		fontSize: Typography.sizes.rg,
 	},
 });

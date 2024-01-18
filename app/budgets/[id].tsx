@@ -1,8 +1,7 @@
-import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text } from "react-native";
 import React from "react";
 import { Stack, useGlobalSearchParams } from "expo-router";
-import Container from "@/components/ui/Container";
-import RootLayout from "../(tabs)/_layout";
+import Container from "@ui/Container";
 import { Colors, Typography } from "@/constants";
 
 export default function BudgetId() {
@@ -19,7 +18,6 @@ export default function BudgetId() {
 				}}
 			/>
 			<Text>{id}</Text>
-			<RootLayout />
 		</Container>
 	);
 }

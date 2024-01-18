@@ -3,6 +3,8 @@ export { default as homeWhite } from "./colored/home-white.png";
 export { default as chartWhite } from "./colored/chart-white.png";
 export { default as settingsWhite } from "./colored/settings-white.png";
 export { default as discountWhite } from "./colored/discount-white.png";
+export { default as cashWhite } from "./colored/cash.png";
+export { default as walletWhite } from "./colored/wallet.png";
 
 export { default as homeWhiteFilled } from "./colored/home-white-filled.png";
 export { default as chartWhiteFilled } from "./colored/chart-white-filled.png";
