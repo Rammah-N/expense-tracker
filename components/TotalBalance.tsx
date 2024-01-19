@@ -7,16 +7,25 @@ import {
 } from "react-native";
 import React from "react";
 import { Colors, Typography } from "../constants";
-import { dollar1 } from "../assets/icons";
+import { Dollar } from "../assets/icons";
 import { TextStroke } from "./ui/TextStroke";
 
+import Yen from "@/assets/icons/svg/yen.svg";
 const TotalBalance: React.FC<ViewProps> = (props) => {
 	return (
 		<View style={styles.container} {...props}>
 			<TextStroke stroke={1} color="black">
 				<Text style={styles.text}>Total Balance</Text>
 			</TextStroke>
-			<ImageBackground source={dollar1} style={styles.dollar} />
+			<View
+				style={{
+					borderWidth: 2,
+					borderColor: "black",
+					borderRadius: 40,
+					padding: 5,
+				}}>
+				<Dollar width={30} height={30} fill={"#000"} />
+			</View>
 			<TextStroke stroke={1} color="black">
 				<Text style={styles.text}>$23,560</Text>
 			</TextStroke>

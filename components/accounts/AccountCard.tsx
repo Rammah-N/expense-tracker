@@ -9,7 +9,7 @@ import {
 import React from "react";
 import PopShadow from "@ui/PopShadow";
 import { Colors, Typography } from "@/constants";
-import { walletWhite, cashWhite, cash, wallet } from "@/assets/icons";
+import { Wallet, Cash } from "@/assets/icons";
 import { formatPrice } from "@/util/helpers";
 import { TextStroke } from "../ui/TextStroke";
 
@@ -30,9 +30,9 @@ const AccountCard: React.FC<AccountCardProps> = ({
 	...rest
 }) => {
 	const icons = {
-		cash: cashWhite,
-		debit: walletWhite,
-		credit: wallet,
+		cash: <Cash width={50} height={27} fill="#fff" />,
+		debit: <Wallet width={50} height={27} fill="#fff" />,
+		credit: <Wallet width={50} height={27} fill="#000" />,
 	};
 	const textColor = ["cash", "debit"].includes(account.type)
 		? Colors.white
@@ -60,11 +60,7 @@ const AccountCard: React.FC<AccountCardProps> = ({
 							{account.type.toLowerCase()}
 						</Text>
 					</View>
-					<Image
-						source={icons[account.type]}
-						style={{ width: 50, height: 27, resizeMode: "contain" }}
-						width={50}
-					/>
+					{icons[account.type]}
 				</View>
 				<View>
 					<Text
