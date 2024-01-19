@@ -27,7 +27,7 @@ export default function App() {
 			<PopShadow>
 				<View
 					style={{
-						backgroundColor: Colors.offwhite,
+						backgroundColor: Colors.white,
 						borderColor: "#000000",
 						borderWidth: 1,
 					}}>
@@ -44,7 +44,7 @@ export default function App() {
 
 const styles = StyleSheet.create({
 	body: {
-		backgroundColor: Colors.offwhite,
+		backgroundColor: Colors.white,
 	},
 	container: {
 		flex: 1,

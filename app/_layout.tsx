@@ -27,12 +27,13 @@ export default function Layout() {
 				screenOptions={{
 					// headerShown: false,
 					contentStyle: {
-						backgroundColor: Colors.offwhite,
+						backgroundColor: Colors.white,
 					},
 				}}>
 				<Stack.Screen name="(tabs)" options={{ headerShown: false }} />
 				<Stack.Screen name="budgets/[id]" />
 			</Stack>
+			<StatusBar style="dark" backgroundColor={Colors.secondary["500"]} />
 		</SafeAreaView>
 	);
 }

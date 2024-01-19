@@ -25,7 +25,7 @@ const RootLayout = () => {
 
 	const tabOptions: any = {
 		headerStyle: {
-			backgroundColor: Colors.offwhite,
+			backgroundColor: Colors.white,
 			borderBottomColor: Colors.darkest,
 			borderBottomWidth: 1,
 		},
@@ -123,7 +123,7 @@ const styles = StyleSheet.create({
 	icon: { width: 20, height: 20, resizeMode: "contain" },
 	label: {
 		fontFamily: Typography.fonts.regular,
-		color: Colors.offwhite,
+		color: Colors.white,
 		fontSize: Typography.sizes.xxs,
 	},
 	tabBar: {

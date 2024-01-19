@@ -14,7 +14,7 @@ export default function BudgetId() {
 					headerTitleStyle: {
 						fontFamily: Typography.fonts.bold,
 					},
-					headerStyle: { backgroundColor: Colors.offwhite },
+					headerStyle: { backgroundColor: Colors.white },
 				}}
 			/>
 			<Text>{id}</Text>

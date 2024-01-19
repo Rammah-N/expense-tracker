@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
 	text: {
 		fontSize: Typography.sizes.md,
 		fontFamily: Typography.fonts.regular,
-		color: Colors.offwhite,
+		color: Colors.white,
 		padding: 5,
 	},
 });

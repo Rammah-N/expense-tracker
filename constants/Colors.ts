@@ -26,6 +26,6 @@ export default {
 		"950": "#42180d",
 	},
 	darkest: "#262626",
-	offwhite: "#FFF9E9",
+	white: "#fff",
 	lightest: "#8E8E8E",
 };

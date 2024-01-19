@@ -9,7 +9,7 @@ import {
 import React from "react";
 import PopShadow from "@ui/PopShadow";
 import { Colors, Typography } from "@/constants";
-import { walletWhite, cashWhite, cash } from "@/assets/icons";
+import { walletWhite, cashWhite, cash, wallet } from "@/assets/icons";
 import { formatPrice } from "@/util/helpers";
 import { TextStroke } from "../ui/TextStroke";
 
@@ -29,6 +29,14 @@ const AccountCard: React.FC<AccountCardProps> = ({
 	style,
 	...rest
 }) => {
+	const icons = {
+		cash: cashWhite,
+		debit: walletWhite,
+		credit: wallet,
+	};
+	const textColor = ["cash", "debit"].includes(account.type)
+		? Colors.white
+		: Colors.darkest;
 	return (
 		<PopShadow
 			style={{
@@ -38,23 +46,22 @@ const AccountCard: React.FC<AccountCardProps> = ({
 			shadowProps={{ offset: [-10, 10], style: { borderRadius: 12 } }}>
 			<View {...rest} style={[styles[account.type], styles.card, style]}>
 				<View style={styles.infoContainer}>
-					<Text
-						style={[
-							styles.name,
-							{
-								color: ["cash", "debit"].includes(account.type)
-									? Colors.offwhite
-									: Colors.darkest,
-							},
-						]}>
-						{account.name.toUpperCase()}
-					</Text>
+					<View>
+						<Text
+							style={[
+								styles.name,
+								{
+									color: textColor,
+								},
+							]}>
+							{account.name.toUpperCase()}
+						</Text>
+						<Text style={{ color: textColor }}>
+							{account.type.toLowerCase()}
+						</Text>
+					</View>
 					<Image
-						source={
-							["credit", "debit"].includes(account.type)
-								? walletWhite
-								: cashWhite
-						}
+						source={icons[account.type]}
 						style={{ width: 50, height: 27, resizeMode: "contain" }}
 						width={50}
 					/>
@@ -63,9 +70,7 @@ const AccountCard: React.FC<AccountCardProps> = ({
 					<Text
 						style={{
 							fontSize: Typography.sizes.xs,
-							color: ["cash", "debit"].includes(account.type)
-								? Colors.offwhite
-								: Colors.darkest,
+							color: textColor,
 						}}>
 						Available Balance
 					</Text>
@@ -100,7 +105,8 @@ const styles = StyleSheet.create({
 	card: {
 		width: 250,
 		height: 150,
-		padding: 20,
+		paddingHorizontal: 20,
+		paddingVertical: 10,
 		borderRadius: 10,
 		justifyContent: "space-between",
 	},
@@ -112,11 +118,11 @@ const styles = StyleSheet.create({
 	},
 	balance: {
 		fontSize: Typography.sizes.lg,
-		color: Colors.offwhite,
+		color: Colors.white,
 		fontFamily: Typography.fonts.bold,
 	},
 	name: {
 		fontSize: Typography.sizes.rg,
-		fontFamily: Typography.fonts.regular,
+		fontFamily: Typography.fonts.bold,
 	},
 });

@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
 		height: 40,
 	},
 	text: {
-		color: Colors.offwhite,
+		color: Colors.white,
 		fontFamily: Typography.fonts.bold,
 	},
 });

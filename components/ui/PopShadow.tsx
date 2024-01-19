@@ -26,7 +26,7 @@ const PopShadow: React.FC<Props> = ({
 				offset={[-5, 5]}
 				startColor="#000000"
 				style={{
-					backgroundColor: Colors.offwhite,
+					backgroundColor: Colors.white,
 					borderTopWidth: 2,
 					borderLeftWidth: 2,
 					borderRightWidth: 2,

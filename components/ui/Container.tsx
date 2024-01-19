@@ -2,6 +2,7 @@ import { SafeAreaView, StyleSheet, View, ViewProps } from "react-native";
 import React from "react";
 import { Colors } from "../../constants";
 import { SafeAreaViewProps } from "react-native-safe-area-context";
+import { StatusBar } from "expo-status-bar";
 
 const Container: React.FC<SafeAreaViewProps> = ({
 	children,
@@ -17,12 +18,10 @@ export default Container;
 
 const styles = StyleSheet.create({
 	container: {
-		backgroundColor: Colors.offwhite,
+		backgroundColor: Colors.white,
 		height: "100%",
-		paddingTop: 10,
-		paddingBottom: 10,
-		paddingLeft: 10,
-		paddingRight: 10,
+		paddingHorizontal: 10,
+		paddingVertical: 10,
 		flex: 1,
 	},
 });
