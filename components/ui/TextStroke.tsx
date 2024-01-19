@@ -21,7 +21,7 @@ export class TextStroke extends React.Component<Props> {
 					style: {
 						...currentStyle,
 						textShadowOffset: {
-							width: w,
+							width: -w,
 							height: h,
 						},
 						textShadowColor: color,

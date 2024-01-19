@@ -20,7 +20,7 @@ const PopShadow: React.FC<Props> = ({
 	...rest
 }) => {
 	return (
-		<View style={style} {...rest}>
+		<View {...rest} style={style}>
 			<Shadow
 				distance={0}
 				offset={[-5, 5]}

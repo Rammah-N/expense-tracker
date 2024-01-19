@@ -2,15 +2,15 @@ import React from "react";
 import { Tabs } from "expo-router";
 import { Image, ImageBackground, StyleSheet, Text, View } from "react-native";
 import {
-	chartWhite,
-	discountWhite,
-	homeWhite,
-	settingsWhite,
-	chartWhiteFilled,
-	discountWhiteFilled,
-	homeWhiteFilled,
-	settingsWhiteFilled,
-} from "../../assets/icons";
+	Chart,
+	Discount,
+	HomeTab,
+	Settings,
+	ChartFilled,
+	DiscountFilled,
+	HomeFilled,
+	SettingsFilled,
+} from "@icons";
 import { Colors, Typography } from "../../constants";
 
 const RootLayout = () => {
@@ -25,8 +25,8 @@ const RootLayout = () => {
 
 	const tabOptions: any = {
 		headerStyle: {
-			backgroundColor: Colors.white,
-			borderBottomColor: Colors.darkest,
+			backgroundColor: Colors.blue["900"],
+			borderBottomColor: Colors.black,
 			borderBottomWidth: 1,
 		},
 		headerTitleStyle: {
@@ -38,6 +38,11 @@ const RootLayout = () => {
 		headerTitleAlign: "left",
 	};
 
+	const iconStyle = {
+		width: 20,
+		height: 20,
+	};
+
 	return (
 		<Tabs>
 			<Tabs.Screen
@@ -47,11 +52,8 @@ const RootLayout = () => {
 					...tabOptions,
 					headerShown: false,
 					tabBarIcon(props) {
-						if (props.focused)
-							return (
-								<ImageBackground source={homeWhiteFilled} style={styles.icon} />
-							);
-						return <Image source={homeWhite} style={styles.icon} />;
+						if (props.focused) return <HomeFilled {...iconStyle} />;
+						return <HomeTab {...iconStyle} />;
 					},
 				}}
 			/>
@@ -61,15 +63,8 @@ const RootLayout = () => {
 					...tabOptions,
 					title: "Stats",
 					tabBarIcon(props) {
-						if (props.focused)
-							return (
-								<Image
-									source={chartWhiteFilled}
-									width={20}
-									style={styles.icon}
-								/>
-							);
-						return <Image source={chartWhite} style={styles.icon} />;
+						if (props.focused) return <ChartFilled {...iconStyle} />;
+						return <Chart {...iconStyle} />;
 					},
 				}}
 			/>
@@ -83,15 +78,8 @@ const RootLayout = () => {
 						textAlign: "left",
 					},
 					tabBarIcon(props) {
-						if (props.focused)
-							return (
-								<Image
-									source={discountWhiteFilled}
-									width={20}
-									style={styles.icon}
-								/>
-							);
-						return <Image source={discountWhite} style={styles.icon} />;
+						if (props.focused) return <DiscountFilled {...iconStyle} />;
+						return <Discount {...iconStyle} />;
 					},
 				}}
 			/>
@@ -101,15 +89,8 @@ const RootLayout = () => {
 					title: "Settings",
 					...tabOptions,
 					tabBarIcon(props) {
-						if (props.focused)
-							return (
-								<Image
-									source={settingsWhiteFilled}
-									width={20}
-									style={styles.icon}
-								/>
-							);
-						return <Image source={settingsWhite} style={styles.icon} />;
+						if (props.focused) return <SettingsFilled {...iconStyle} />;
+						return <Settings {...iconStyle} />;
 					},
 				}}
 			/>
@@ -127,8 +108,9 @@ const styles = StyleSheet.create({
 		fontSize: Typography.sizes.xxs,
 	},
 	tabBar: {
-		backgroundColor: Colors.secondary["500"],
+		backgroundColor: Colors.blue["900"],
 		paddingTop: 5,
 		justifyContent: "center",
+		borderTopColor: Colors.black,
 	},
 });

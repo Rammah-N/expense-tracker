@@ -36,7 +36,7 @@ const AccountCard: React.FC<AccountCardProps> = ({
 	};
 	const textColor = ["cash", "debit"].includes(account.type)
 		? Colors.white
-		: Colors.darkest;
+		: Colors.black;
 	return (
 		<PopShadow
 			style={{
@@ -85,17 +85,17 @@ export default AccountCard;
 
 const styles = StyleSheet.create({
 	cash: {
-		backgroundColor: Colors.primary["700"],
+		backgroundColor: Colors.green["700"],
 		color: "#fff",
 	},
 
 	debit: {
-		backgroundColor: Colors.secondary["950"],
+		backgroundColor: Colors.sienna["950"],
 		color: "#fff",
 	},
 
 	credit: {
-		backgroundColor: Colors.primary["300"],
+		backgroundColor: Colors.green["300"],
 	},
 
 	card: {

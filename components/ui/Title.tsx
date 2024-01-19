@@ -14,8 +14,20 @@ const Title = ({
 	style?: StyleProp<ViewStyle>;
 }) => {
 	return (
-		<PopShadow style={[style, { marginLeft: 10 }]} {...rest}>
-			<TextStroke stroke={1} color="black">
+		<PopShadow
+			{...rest}
+			style={[style, { marginLeft: 10, borderRadius: 20 }]}
+			shadowProps={{
+				style: {
+					backgroundColor: Colors.white,
+					borderTopWidth: 2,
+					borderLeftWidth: 2,
+					borderRightWidth: 2,
+					borderBottomWidth: 2,
+					borderRadius: 8,
+				},
+			}}>
+			<TextStroke stroke={2} color={Colors.black}>
 				<Text style={styles.text}>{title}</Text>
 			</TextStroke>
 		</PopShadow>
@@ -27,8 +39,12 @@ export default Title;
 const styles = StyleSheet.create({
 	text: {
 		fontSize: Typography.sizes.md,
-		fontFamily: Typography.fonts.regular,
+		fontFamily: Typography.fonts.bold,
 		color: Colors.white,
-		padding: 5,
+		paddingHorizontal: 8,
+		paddingBottom: 4,
+
+		backgroundColor: Colors.orange["300"],
+		borderRadius: 6,
 	},
 });

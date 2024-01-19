@@ -5,8 +5,6 @@ import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import * as SplashScreen from "expo-splash-screen";
 import { useFonts } from "expo-font";
 import { useCallback } from "react";
-import { Link } from "expo-router";
-import Container from "../components/ui/Container";
 
 SplashScreen.preventAutoHideAsync();
 export default function Layout() {
@@ -22,18 +20,20 @@ export default function Layout() {
 		return null;
 	}
 	return (
-		<SafeAreaView onLayout={onLayoutRootView} style={{ flex: 1 }}>
+		<SafeAreaView
+			onLayout={onLayoutRootView}
+			style={{ flex: 1, backgroundColor: Colors.blue["900"] }}>
 			<Stack
 				screenOptions={{
 					// headerShown: false,
 					contentStyle: {
-						backgroundColor: Colors.white,
+						backgroundColor: Colors.blue["900"],
 					},
 				}}>
 				<Stack.Screen name="(tabs)" options={{ headerShown: false }} />
 				<Stack.Screen name="budgets/[id]" />
 			</Stack>
-			<StatusBar style="dark" backgroundColor={Colors.secondary["500"]} />
+			<StatusBar style="auto" />
 		</SafeAreaView>
 	);
 }

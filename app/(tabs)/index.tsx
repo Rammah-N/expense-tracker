@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
 		paddingBottom: Spacing[1],
 		marginBottom: 20,
 		borderBottomWidth: 1,
-		borderBottomColor: Colors.darkest,
+		borderBottomColor: Colors.black,
 	},
 	profileText: {
 		fontFamily: Typography.fonts.bold,

@@ -1,3 +1,12 @@
+export { default as Chart } from "./chart-white.svg";
+export { default as ChartFilled } from "./chart-white-filled.svg";
+export { default as Settings } from "./settings-white.svg";
+export { default as SettingsFilled } from "./settings-white-filled.svg";
+export { default as HomeFilled } from "./home-white-filled.svg";
+export { default as HomeTab } from "./home-white.svg";
+export { default as DiscountFilled } from "./discount-white-filled.svg";
+export { default as Discount } from "./discount-white.svg";
+
 export { default as Analytics } from "./analytics.svg";
 export { default as Anchor } from "./anchor.svg";
 export { default as Apple } from "./apple.svg";
