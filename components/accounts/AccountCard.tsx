@@ -8,17 +8,11 @@ import {
 } from "react-native";
 import React from "react";
 import PopShadow from "@ui/PopShadow";
-import { Colors, Typography } from "@/constants";
+import { Colors, Typography } from "@constants";
 import { Wallet, Cash } from "@/assets/icons";
 import { formatPrice } from "@/util/helpers";
 import { TextStroke } from "../ui/TextStroke";
-
-export interface Account {
-	balance: number;
-	currency: string;
-	name: string;
-	type: "cash" | "debit" | "credit";
-}
+import { Account } from "@types";
 
 interface AccountCardProps extends ViewProps {
 	account: Account;
@@ -41,7 +35,7 @@ const AccountCard: React.FC<AccountCardProps> = ({
 		<PopShadow
 			style={{
 				marginLeft: 10,
-				height: 270,
+				height: 180,
 			}}
 			shadowProps={{ offset: [-10, 10], style: { borderRadius: 12 } }}>
 			<View {...rest} style={[styles[account.type], styles.card, style]}>
@@ -85,17 +79,17 @@ export default AccountCard;
 
 const styles = StyleSheet.create({
 	cash: {
-		backgroundColor: Colors.green["700"],
+		backgroundColor: Colors.green.variants["700"],
 		color: "#fff",
 	},
 
 	debit: {
-		backgroundColor: Colors.sienna["950"],
+		backgroundColor: Colors.sienna.variants["950"],
 		color: "#fff",
 	},
 
 	credit: {
-		backgroundColor: Colors.green["300"],
+		backgroundColor: Colors.green.variants["300"],
 	},
 
 	card: {

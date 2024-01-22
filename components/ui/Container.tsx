@@ -18,7 +18,7 @@ export default Container;
 
 const styles = StyleSheet.create({
 	container: {
-		backgroundColor: Colors.blue["900"],
+		backgroundColor: Colors.blue.primary,
 		height: "100%",
 		paddingHorizontal: 10,
 		paddingVertical: 10,

@@ -1,13 +1,7 @@
 import React from "react";
 import { Shadow, ShadowProps } from "react-native-shadow-2";
 import { Colors } from "../../constants";
-import {
-	StyleProp,
-	StyleSheet,
-	View,
-	ViewProps,
-	ViewStyle,
-} from "react-native";
+import { View, ViewProps } from "react-native";
 
 interface Props extends ViewProps {
 	shadowProps?: ShadowProps;

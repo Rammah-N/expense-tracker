@@ -22,12 +22,12 @@ export default function Layout() {
 	return (
 		<SafeAreaView
 			onLayout={onLayoutRootView}
-			style={{ flex: 1, backgroundColor: Colors.blue["900"] }}>
+			style={{ flex: 1, backgroundColor: Colors.blue.variants["900"] }}>
 			<Stack
 				screenOptions={{
 					// headerShown: false,
 					contentStyle: {
-						backgroundColor: Colors.blue["900"],
+						backgroundColor: Colors.blue.variants["900"],
 					},
 				}}>
 				<Stack.Screen name="(tabs)" options={{ headerShown: false }} />

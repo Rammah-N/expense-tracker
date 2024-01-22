@@ -25,7 +25,7 @@ const RootLayout = () => {
 
 	const tabOptions: any = {
 		headerStyle: {
-			backgroundColor: Colors.blue["900"],
+			backgroundColor: Colors.blue.variants["900"],
 			borderBottomColor: Colors.black,
 			borderBottomWidth: 1,
 		},
@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
 		fontSize: Typography.sizes.xxs,
 	},
 	tabBar: {
-		backgroundColor: Colors.blue["900"],
+		backgroundColor: Colors.blue.primary,
 		paddingTop: 5,
 		justifyContent: "center",
 		borderTopColor: Colors.black,

@@ -6,7 +6,9 @@
 			"@/*": ["./*"],
 			// Create aliases for ui folder
 			"@ui/*": ["./components/ui/*"],
-			"@icons": ["./assets/icons/index"]
+			"@icons": ["./assets/icons/index"],
+			"@types": ["./util/types.ts"],
+			"@constants": ["./constants/index.ts"]
 		}
 	},
 	"include": ["**/*.ts", "**/*.tsx"],

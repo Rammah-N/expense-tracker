@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
 		borderRightWidth: 2,
 		borderBottomWidth: 2,
 		borderColor: Colors.black,
-		backgroundColor: Colors.green["500"],
+		backgroundColor: Colors.green.primary,
 		borderRadius: 60,
 		height: 60,
 		flexDirection: "row",

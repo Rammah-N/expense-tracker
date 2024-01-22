@@ -2,10 +2,11 @@ import React from "react";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import Avatar from "../../components/ui/Avatar";
 import person from "../../assets/person.png";
-import { Colors, Spacing, Typography } from "@/constants";
+import { Colors, Spacing, Typography } from "@constants";
 import Container from "@/components/ui/Container";
 import TotalBalance from "@/components/TotalBalance";
 import Accounts from "@/components/accounts/Accounts";
+import Transactions from "@/components/transactions/Transactions";
 
 const Homepage = () => {
 	return (
@@ -19,9 +20,8 @@ const Homepage = () => {
 				</View>
 
 				<TotalBalance />
-				{/* Accounts */}
 				<Accounts style={{ marginVertical: Spacing[3] }} />
-				{/* Transactions */}
+				<Transactions />
 			</ScrollView>
 		</Container>
 	);
